@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>Réservations des events</h2>
+<mat-dialog-content class="mat-typography">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Espaces</mat-label>
+    <input type="text" placeholder="Choisi ton espace" matInput
+      [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete (optionSelected)='selectedSpace= $event.option.value'
+      autoActiveFirstOption
+      #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async"
+        [value]="option" id="{{option._id}}">
+        {{option.title}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Select me</mat-label>
+    <mat-select [(ngModel)]="selectedEvent">
+      <mat-option *ngFor="let event of filteredEvents" [value]="event">{{event.title}}</mat-option>
+    </mat-select>
+    <mat-hint align="end">Select the type of room</mat-hint>
+  </mat-form-field>
+
+  <!-- <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Select me</mat-label>
+    <mat-select [(ngModel)]="materialType">
+      <mat-option value="pc">PC Asus</mat-option>
+      <mat-option value="mac">MacBook Pro</mat-option>
+      <mat-option value="helmet">Sony WH-1001</mat-option>
+    </mat-select>
+    <mat-hint align="end">Select the type of room</mat-hint>
+  </mat-form-field> -->
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Non merci</button>
+  <button mat-button (click)="reserveEvent()" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>

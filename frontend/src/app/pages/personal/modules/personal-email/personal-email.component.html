@@ -1,0 +1,73 @@
+<h1>Mis à jour de vos coordonnées</h1>
+
+
+
+<mat-card>
+  <mat-card-content>
+    <form #changeOthers="ngForm" [formGroup]="changeEmailInformation"
+      (ngSubmit)="modifyCurrentEmail()">
+      <h2> Adresse e-mail</h2>
+      <mat-form-field appearance="fill">
+        <mat-label>{{user.email}}</mat-label>
+        <input matInput placeholder="pat@example.com" id="emailInput"
+          [disabled]="true">
+        <!-- <mat-error>{{getErrorMessage('email')}}</mat-error> -->
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your new email</mat-label>
+        <input matInput placeholder="pat@example.com" id="emailInput"
+          formControlName="email">
+        <mat-error *ngIf="changeEmailInformation.controls['email'].invalid">{{emailErrorMessage('email')}}</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="accent" class="button" type="submit">Modifier</button>
+    </form>
+
+  </mat-card-content>
+
+
+</mat-card>
+
+
+
+<mat-card>
+  <mat-card-content>
+    <mat-error *ngIf="passwordError">{{passwordError}}</mat-error>
+    <form #changeInfo="ngForm" [formGroup]="changePasswordInformation"
+      (ngSubmit)="modifyPassword()">
+      <h2>Mettre à jour le mot de passe</h2>
+      <mat-form-field appearance="fill">
+        <mat-label>Veuillez entrer l'ancien mot de passe</mat-label>
+        <input matInput type="password" formControlName="oldPassword">
+        <mat-error
+          *ngIf="changePasswordInformation.controls['oldPassword'].invalid">
+          {{getErrorMessage('oldPassword')}}</mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter le nouveau mot de passe</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-error
+          *ngIf="changePasswordInformation.controls['password'].invalid">{{getErrorMessage('password')}}
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Valider le nouveau mot de passe</mat-label>
+        <input matInput type="password" formControlName="confirmPassword">
+        <mat-error
+          *ngIf="changePasswordInformation.controls['confirmPassword'].invalid">
+          {{getErrorMessage('confirmPassword')}}</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="accent" class="button" type="submit">Valider</button>
+    </form>
+
+  </mat-card-content>
+
+
+</mat-card>

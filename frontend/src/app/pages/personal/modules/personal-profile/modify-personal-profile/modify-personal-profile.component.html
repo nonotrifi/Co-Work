@@ -1,0 +1,28 @@
+<h2 mat-dialog-title="Hello"> Changement vos informations </h2>
+<mat-dialog-content class="mat-typography">
+
+  <form #changeInfo="ngForm" [formGroup]="changePersonalInformations"
+    (ngSubmit)="ModifyPersonalInformations()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Prénom</mat-label>
+      <input matInput placeholder="John" formControlName="firstName"
+        required>
+      <mat-error
+        *ngIf="changePersonalInformations.controls['firstName'].invalid">{{getErrorMessage('firstName')}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nom</mat-label>
+      <input matInput placeholder="Doe" formControlName="lastName" required>
+      <mat-error
+        *ngIf="changePersonalInformations.controls['lastName'].invalid">{{getErrorMessage('lastName')}}</mat-error>
+    </mat-form-field>
+
+  </form>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">Non merci</button>
+  <button mat-button cdkFocusInitial (click)="ModifyPersonalInformations()">Ok</button>
+</mat-dialog-actions>

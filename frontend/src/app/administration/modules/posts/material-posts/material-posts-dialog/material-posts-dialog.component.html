@@ -1,0 +1,46 @@
+<h2 mat-dialog-title="Hello"> Admin Dialog page to manage materials</h2>
+<mat-dialog-content class="mat-typography">
+  <p>Manage your materials</p>
+  <form #addEventPost="ngForm" [formGroup]="addEventFormGroup"
+    (ngSubmit)="createMaterial()">
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" placeholder="Paris Odéon Space"
+        required>
+
+      <mat-error *ngIf="addEventFormGroup.controls['name'].invalid">{{getErrorMessage('name')}}</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>limit</mat-label>
+      <input matInput formControlName="limit" placeholder="3" type="number"
+        required>
+      <mat-error *ngIf="addEventFormGroup.controls['limit'].invalid">{{getErrorMessage('limit')}}</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Space</mat-label>
+      <input type="text" placeholder="Pick one" aria-label="Number" matInput
+        [formControl]="roomControl"
+        [matAutocomplete]="auto">
+      <mat-autocomplete (optionSelected)='selectedSpace= $event.option.value'
+        autoActiveFirstOption
+        #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async"
+          [value]="option" id="{{option._id}}">
+          {{option.title}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Non merci</button>
+  <button mat-button (click)="createMaterial()">Ok</button>
+</mat-dialog-actions>

@@ -1,0 +1,56 @@
+<div class="page-heading">
+  <div class="page-heading__content">
+    <h1 class="page-heading__main-heading">Remplissez le formulaire ci-dessous
+      pour demander à être appelé par un représentant Co'Work. </h1>
+  </div>
+</div>
+
+
+
+<mat-card>
+  <mat-card-content>
+
+    <form [formGroup]="FormData">
+      <mat-form-field appearance="fill">
+        <mat-label>Entrez votre nom et prénom</mat-label>
+        <input matInput placeholder="John Snow" id="nameInput"
+          formControlName="nameFormControl" name="name">
+        <mat-error *ngIf="FormData.controls['nameFormControl'].invalid">{{getErrorMessage('nameFormControl')}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Entez votre numéro de téléphone</mat-label>
+        <input matInput placeholder="0631964578" id="phoneInput"
+          formControlName="phoneFormControl" name="phone">
+        <mat-error *ngIf="FormData.controls['phoneFormControl'].invalid">{{getErrorMessage('phoneFormControl')}}
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Entez votre commentaire </mat-label>
+        <textarea matInput placeholder="comments" id="MessageInput"
+          name="userMessage"
+          formControlName="textAreaFormControl">
+        </textarea>
+        <mat-error *ngIf="FormData.controls['textAreaFormControl'].invalid">{{getErrorMessage('textAreaFormControl')}}
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Entez votre email</mat-label>
+        <input matInput placeholder="pat@example.com" id="emailInput"
+          name="email" formControlName="email">
+        <mat-error>{{getErrorMessage('email')}}</mat-error>
+      </mat-form-field>
+
+
+      <button mat-raised-button color="accent" [disabled]="!FormData.valid"
+        class="button"
+        type="submit" (click)="onSubmitForm()"
+        [routerLink]="['/contact/confirmation']">Valider</button>
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,22 @@
+<mat-card class="card">
+  <mat-card-header>
+    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+    <h1 class="title">{{event.title}}</h1>
+  </mat-card-header>
+  <!-- <mat-card-header>
+
+  </mat-card-header> -->
+
+
+  <mat-card-content>
+    <img class="image" src="{{event.image}}" alt="Bastille">
+    <h2>
+      {{event.description}}
+    </h2>
+    <a mat-button *ngIf="!isAuth" (click)="goToLogin()">Réservez votre Event</a>
+    <a mat-button *ngIf="isClient" (click)="goToReservations()">Réservez votre
+      Event</a>
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+    </mat-card-header>
+  </mat-card-content>

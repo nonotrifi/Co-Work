@@ -1,0 +1,85 @@
+@media (min-width: 1024px) {
+  .page-heading__main-heading {
+    font-size: 3.5em;
+}
+}
+
+
+.page-heading__main-heading {
+  font-family: Interstate,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  max-width: 1200px;
+  text-transform: none;
+  font-size: 2em;
+  margin: 0 auto;
+}
+
+.h1, h1 {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+
+h1, h2, h3 {
+  font-feature-settings: "kern" 1,"liga" 1,"pnum" 1,"tnum" 0,"onum" 1,"lnum" 0,"dlig" 1;
+}
+
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+
+.page-heading {
+  background: #fafafa;
+  display: table;
+  padding: 3em 1em;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+body, html {
+  font-family: Interstate,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 200;
+  color: #333;
+  font-size: 16px;
+  height: 100%;
+  line-height: 1.375em;
+  background-color: #f0f0f0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+.second {
+  text-align: center;
+  margin: 100px;
+  font-size: 1.312em;
+  margin-top: 2em;
+
+}
+
+
+
+

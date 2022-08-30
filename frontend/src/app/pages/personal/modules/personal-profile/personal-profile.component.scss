@@ -1,0 +1,216 @@
+
+input.form-control.rounded {
+  border-radius: 2rem !important;
+}
+
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group input {
+  border-radius: 2rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown)~label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
+}
+
+.btn-google {
+  color: white;
+  background-color: #ea4335;
+}
+
+.btn-facebook {
+  color: white;
+  background-color: #3b5998;
+}
+
+mat-card {
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+mat-form-field {
+  display: block;
+}
+
+.mat-raised-button{
+  background-color: #e4b23a !important;
+}
+
+
+textarea {
+  height: 150px;
+}
+
+@media (min-width: 1024px) {
+  .page-heading__main-heading {
+    font-size: 3.5em;
+}
+}
+
+
+.page-heading__main-heading {
+  font-family: Interstate,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  max-width: 1600px;
+  text-transform: none;
+  font-size: 2em;
+  margin: 0 auto;
+}
+
+.h1, h1 {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+
+h1, h2, h3 {
+  font-feature-settings: "kern" 1,"liga" 1,"pnum" 1,"tnum" 0,"onum" 1,"lnum" 0,"dlig" 1;
+}
+
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+  text-align: center;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+
+.page-heading {
+  background: #fafafa;
+  display: table;
+  padding: 3em 1em;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+body, html {
+  font-family: Interstate,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 300;
+  color: #333;
+  font-size: 16px;
+  height: 100%;
+  line-height: 1.375em;
+  background-color: #f0f0f0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+.second {
+  text-align: center;
+  margin: 100px;
+  font-size: 1.312em;
+  margin-top: 2em;
+
+}
+
+
+.change-info{
+  max-width: 700px!important;
+}
+
+
+.change-info2{
+  max-width: 700px!important;
+}

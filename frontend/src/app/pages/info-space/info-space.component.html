@@ -1,0 +1,53 @@
+<div style="display: flex;" class="space-details">
+  <div style="flex: 1 1 auto;" class="space-card"><h1>{{space?.title}}</h1>
+    <div class="spacer"></div>
+    <div>
+      <img class="space-image" src="{{space?.image}}" alt="{{space?.title}}
+        image">
+    </div>
+
+  </div>
+  <mat-card style="flex: 1 1 auto;" class="space-card ">
+    <h3>{{space?.description}} </h3>
+    <a mat-button *ngIf="!isAuth" (click)="goToLogin()">Réservez votre Espace</a>
+    <a mat-button *ngIf="isClient" (click)="goToReservation()">Réservez votre
+      Espace</a>
+    <div class="even-columns">
+      <div class="col">
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          fontIcon="restaurant"></mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          fontIcon="laptop"> </mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          fontIcon="groups"> </mat-icon>
+      </div>
+
+
+      <div class="col">
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          fontIcon="folder"></mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          fontIcon="apple"> </mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          fontIcon="windows"> </mat-icon>
+      </div>
+
+      <div class="col">
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          fontIcon="langage"></mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          fontIcon="schedule"> </mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          fontIcon="today"> </mat-icon>
+      </div>
+
+
+    </div>
+
+
+
+  </mat-card>
+
+
+
+</div>

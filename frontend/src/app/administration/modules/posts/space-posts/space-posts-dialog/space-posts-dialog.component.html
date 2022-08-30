@@ -1,0 +1,61 @@
+<h2 mat-dialog-title="Hello"> Gestion des espaces</h2>
+<mat-dialog-content class="mat-typography">
+  <p>Manage your spaces</p>
+
+
+
+  <form #addSpacePost="ngForm" [formGroup]="addSpaceFormGroup"
+    (ngSubmit)="createSpace()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Paris Odéon Space" formControlName="title"
+        required>
+      <mat-error *ngIf="addSpaceFormGroup.controls['title'].invalid">{{getErrorMessage('title')}}</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Incredible space"
+        formControlName="description" required></textarea>
+      <mat-error *ngIf="addSpaceFormGroup.controls['description'].invalid">{{getErrorMessage('description')}}</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Meeting Room</mat-label>
+      <input matInput type="number" placeholder="Blue wide space"
+        formControlName="meetingRoom" matInput
+        placeholder="Ex. 1" required>
+      <mat-error *ngIf="addSpaceFormGroup.controls['meetingRoom'].invalid">{{getErrorMessage('meetingRoom')}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Call Room</mat-label>
+      <input matInput type="number" formControlName="callRoom" placeholder="Blue
+        wide space" matInput placeholder="Ex. 1" required>
+      <mat-error *ngIf="addSpaceFormGroup.controls['callRoom'].invalid">{{getErrorMessage('callRoom')}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Image</mat-label>
+      <ngx-mat-file-input placeholder="Upload your
+        image" [multiple]="false" #removableInput [formControl]="fileControl"
+        [accept]="accept">
+      </ngx-mat-file-input>
+      <button mat-icon-button matSuffix *ngIf="!removableInput.empty"
+        (click)="removableInput.clear($event)">
+        <mat-icon>clear</mat-icon>
+      </button>
+    </mat-form-field>
+
+  </form>
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Non merci</button>
+  <button mat-button cdkFocusInitial [disabled]="!addSpaceFormGroup.valid"
+    (click)="createSpace()">Ok</button>
+</mat-dialog-actions>

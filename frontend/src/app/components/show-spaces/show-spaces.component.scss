@@ -1,0 +1,57 @@
+gty.example-card {
+    max-width: 400px;
+    margin: 3%;
+    border-spacing: 2px;
+
+  }
+
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #e4b23a #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #e4b23a;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+
+  .example-header-image {
+    background-size: cover;
+
+
+  }
+
+  .cards{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 4%;
+    margin-left: 50px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.inner::-webkit-scrollbar {
+  display: none;
+}
+
+  .c-location-finder__input:not([type=radio]):not([type=submit]) {
+    margin: 0;
+    padding: 0 47px 0 24px;
+    height: 56px;
+    box-shadow: none;
+    border: none;
+    padding: 5px;
+}

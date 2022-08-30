@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>Réservations de matériels</h2>
+<mat-dialog-content class="mat-typography">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Espaces</mat-label>
+    <input type="text" placeholder="Choisi ton espace" matInput
+      [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete (optionSelected)='selectedSpace=$event.option.value'
+      autoActiveFirstOption
+      #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async"
+        [value]="option" id="{{option._id}}">
+        {{option.title}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Type du matériel</mat-label>
+    <mat-select [(ngModel)]="materialType" [disabled]="materials.length===0">
+      <mat-option *ngFor="let material of materials" [value]="material">{{material.name}}</mat-option>
+    </mat-select>
+    <mat-hint align="end">Séléctionner le type du matériel</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Entrer le nombre</mat-label>
+    <input [(ngModel)]="quantity" type="number" matInput placeholder="Ex. 1">
+  </mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Non merci</button>
+  <button mat-button (click)="reserveMaterial()" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>

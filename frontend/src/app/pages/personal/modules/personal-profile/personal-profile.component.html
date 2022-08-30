@@ -1,0 +1,61 @@
+<h1>Informations personnelles</h1>
+
+
+
+<mat-card class="change-info">
+  <mat-card-content>
+    <form #changeInfo="ngForm">
+      <h2></h2>
+      <mat-form-field appearance="fill">
+        <mat-label>{{user?.firstName}}</mat-label>
+
+        <input matInput placeholder="John Snow" id="nameInput"
+          name="firstname" [disabled]="true">
+        <!-- <mat-error *ngIf="FormData.controls['nameFormControl'].invalid">{{getErrorMessage('nameFormControl')}} -->
+        <!-- </mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>{{user?.lastName}}</mat-label>
+        <input matInput placeholder="John Snow" id="nameInput"
+          name="lastname" [disabled]="true">
+
+      </mat-form-field>
+
+      <button mat-raised-button color="accent"
+        class="button"
+        type="submit" (click)="openDialog()">Modifier</button>
+    </form>
+
+
+
+  </mat-card-content>
+
+
+
+
+</mat-card>
+
+<h1></h1>
+
+
+<mat-card class="change-info2">
+  <mat-card-content>
+    <mat-card-title>Suppression du compte</mat-card-title>
+    <br>
+    <form #changeInfo="ngForm">
+
+
+      <button mat-raised-button color="accent"
+        class="button"
+        type="submit" (click)="openDeleteDialog()">Supprimer</button>
+    </form>
+
+
+
+  </mat-card-content>
+
+
+
+
+</mat-card>

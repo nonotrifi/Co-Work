@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>{{data.title}} Subscription | € {{data.price}}</h1>
+<div mat-dialog-content>
+  <div style="min-width: 500px; min-height: 50px" class="p-4">
+    <div *ngIf="invalidError" style="color:red">
+      {{ invalidError.message }}
+    </div>
+
+    <stripe-card [options]="{style: elementStyles, classes: elementClasses, iconStyle:'solid', disabled:stripeDisable}"
+      #stripeCard (catch)="onStripeError($event)" [(complete)]="cardDetailsFilledOut" [(invalid)]="invalidError"
+      (cardMounted)="cardCaptureReady = 1" (paymentMethodChange)="setPaymentMethod($event)"
+      (tokenChange)="setStripeToken($event)" (sourceChange)="setStripeSource($event)"></stripe-card>
+
+  </div>
+
+</div>
+<div mat-dialog-actions>
+  <button type="button" mat-raised-button [disabled]="processing" (click)="stripeCard.createPaymentMethod(extraData)">Pay</button>
+  <!-- <button type="button" mat-raised-button (click)="stripeCard.createSource(extraData)">createSource</button>
+  <button type="button" mat-raised-button (click)="stripeCard.createToken(extraData)">createToken</button> -->
+</div>

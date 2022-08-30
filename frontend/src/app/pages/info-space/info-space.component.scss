@@ -1,0 +1,37 @@
+img, svg {
+  vertical-align: middle;
+  height: 280px;
+}
+.spacer {
+  height: 50px;
+}
+
+.space-card{
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.space-image{
+  border-radius: 20px;
+  height: 400px;
+}
+
+.space-details{
+  padding: 8%;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+
+
+.mat-icon {
+  width: 50px;
+  // font-size: 100%;
+  font-size: 50px;
+  padding: 50px!important;
+  width: -webkit-fill-available!important;
+}
+
+
+.even-columns{
+  display: flex;
+}

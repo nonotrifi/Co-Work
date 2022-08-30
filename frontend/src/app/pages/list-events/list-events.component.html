@@ -1,0 +1,13 @@
+<app-contact-bar *ngIf="!isClient"></app-contact-bar>
+
+<div class="page-heading">
+  <div class="page-heading__content">
+    <h1 class="page-heading__main-heading">Pour développer votre réseau
+      professionnel, rien de plus simple : retournez-vous et dites "bonjour".</h1>
+  </div>
+</div>
+<div class="cards">
+  <div *ngFor="let e of eventTab" class="px-1">
+    <app-event [eventModel]="e"></app-event>
+  </div>
+</div>

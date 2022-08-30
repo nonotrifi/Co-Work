@@ -1,0 +1,22 @@
+.image {
+  /* width: calc(100% + 32px); */
+  margin: 0 -16px 16px -16px;
+  display: block;
+  overflow: hidden;
+  height: 300px;
+  float: left;
+  width: 500px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+  margin: 3%;
+  height: 450px;
+}
+
+.title{
+  color: #e4b23a;
+    font-weight: 500;
+}
+

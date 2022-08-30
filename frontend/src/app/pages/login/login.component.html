@@ -1,0 +1,43 @@
+<mat-card>
+  <mat-card-content>
+    <form #loginForm="ngForm" [formGroup]="loginFormGroup" (ngSubmit)="login()">
+      <h2>Log In</h2>
+      <mat-error *ngIf="loginError">
+        {{loginError}}
+      </mat-error>
+      <mat-form-field appearance="fill">
+        <mat-label>Entrez votre email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email"
+          required>
+        <mat-error *ngIf="loginFormGroup.controls.email.invalid">{{getErrorMessage('email')}}</mat-error>
+      </mat-form-field>
+      <!-- <mat-form-field>
+        <input matInput type="password" placeholder="Password" name="password" required>
+        <mat-error>
+          Please provide a valid password
+        </mat-error>
+      </mat-form-field> -->
+      <mat-form-field appearance="fill">
+        <mat-label>Entrez votre mot de passe</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'"
+          formControlName="password">
+        <button type="button" mat-icon-button matSuffix (click)="hide= !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="loginFormGroup.controls.password.invalid">{{getErrorMessage('password')}}</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary"
+        [disabled]="!loginFormGroup.valid">Login</button>
+    </form>
+    <br>
+    <span class="center margin-top">Nouveau sur notre plateforme ?<a
+        class="sign-up-link"
+        routerLink="/sign-up"> Sign
+        up!</a></span> <br>
+    <span class="center margin-top"><a
+        class="password-link"
+        routerLink="/forgot-password">Mot de passe oublié ?</a></span>
+  </mat-card-content>
+</mat-card>

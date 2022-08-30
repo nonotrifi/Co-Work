@@ -1,0 +1,76 @@
+<div class="d-flex space-management-container">
+  <br>
+  <mat-card-title>Réservations des espaces </mat-card-title>
+  <br>
+
+  <mat-form-field>
+    <mat-label>
+      Filter
+    </mat-label>
+    <input matInput placeholder="Ex. Bastille" (keyup)="applyFilter($event)">
+  </mat-form-field>
+  <div>
+    <table mat-table matSort [dataSource]="dataSource">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+        <td mat-cell *matCellDef="let row"> {{row._id}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="userId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>user</th>
+        <td mat-cell *matCellDef="let row"> {{row.userId?.firstName ||
+          'invalid'}}</td>
+      </ng-container>
+      <ng-container matColumnDef="spaceId">
+        <th mat-header-cell *matHeaderCellDef>space</th>
+        <td mat-cell *matCellDef="let row"> {{row.spaceId?.title || 'invalid'}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="startDate">
+        <th mat-header-cell *matHeaderCellDef>Début</th>
+
+        <td mat-cell *matCellDef="let row"> {{row.startDate | date: 'longDate'}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="endDate">
+        <th mat-header-cell *matHeaderCellDef>Fin</th>
+        <td mat-cell *matCellDef="let row">{{row.endDate | date: 'longDate'}}</td>
+      </ng-container>
+      <ng-container matColumnDef="meeetingRoom">
+        <th mat-header-cell *matHeaderCellDef>meeetingRoom</th>
+        <td mat-cell *matCellDef="let row">{{row.meetingRoom}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="callRoom">
+        <th mat-header-cell *matHeaderCellDef>callRoom</th>
+        <td mat-cell *matCellDef="let row">{{row.callRoom}}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example
+            icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="onDelete(row._id)">
+              <mat-icon>delete</mat-icon>
+              <span>Delete</span>
+            </button>
+
+          </mat-menu>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+
+    </table>
+  </div>
+
+  <mat-paginator [length]="reservations.length" [pageSize]="10"
+    [pageSizeOptions]="[1,5, 10, 20]"></mat-paginator>
+</div>

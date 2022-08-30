@@ -1,0 +1,27 @@
+<mat-card class="card">
+  <mat-card-header>
+    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+    <h1 class="title">{{proposal.title}}</h1>
+  </mat-card-header>
+
+  <mat-card-content>
+
+    <img class="image" src="{{proposal.image}}" alt="Bastille">
+    <p>
+      {{proposal.description}}
+    </p>
+
+    <mat-card-header>
+
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <h2>{{proposal.subTitle}}</h2>
+
+
+
+    </mat-card-header>
+
+  </mat-card-content>
+  <a mat-button *ngIf="!isAuth" (click)="goToLogin()" color="accent">Accéder à
+    l'espace client</a>
+  <a mat-button *ngIf="isClient" (click)="goToReservations()" color="accent">Accéder
+    aux réservations</a>

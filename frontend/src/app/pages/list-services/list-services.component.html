@@ -1,0 +1,13 @@
+
+<app-contact-bar *ngIf="!isClient"></app-contact-bar>
+<div class="page-heading">
+  <div class="page-heading__content">
+    <h1 class="page-heading__main-heading">Découvrez comment l'énergie de nos
+      espaces de travail peut bénéficier à votre activité.</h1>
+  </div>
+</div>
+<div class="cards">
+  <div *ngFor="let s of proposalTab" class="px-1">
+    <app-cowork-service [proposalModel]="s"></app-cowork-service>
+  </div>
+</div>

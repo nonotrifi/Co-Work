@@ -1,0 +1,23 @@
+.card {
+  max-width: 400px;
+  height: 500px;
+  width: 300px;
+}
+
+.mat-card-header {
+  height: 50px;
+}
+
+.mat-card-image{
+  height: 200px;
+}
+
+.mat-card-subtitle, .mat-card-content{
+  height: 100px;
+}
+
+
+.spacer {
+  height: 5px;
+  align-items: center;
+}

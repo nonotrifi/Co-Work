@@ -1,0 +1,26 @@
+.text{
+  font-size: 1.25rem;
+  line-height: 1.23;
+  margin-bottom: 10px;
+  padding-left: 20%;
+  vertical-align: center;
+}
+
+
+.mat-card-title {
+  display: block;
+  margin-bottom: 8px;
+  text-align: -webkit-center;
+}
+
+.mat-body p, .mat-body-1 p, .mat-typography .mat-body p, .mat-typography .mat-body-1 p, .mat-typography p {
+  /* margin-right: 10px; */
+  margin-left: -50px;
+  margin-right: 10px;
+}
+
+
+.button {
+  margin-left: 16px;
+  align-items: center;
+}

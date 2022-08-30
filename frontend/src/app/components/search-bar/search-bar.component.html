@@ -1,0 +1,22 @@
+<!--<form class="d-flex" role="search">-->
+<!--  <input class="form-control me-5" type="search" placeholder="Search" aria-label="Search">-->
+<!--  <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--</form>-->
+
+<div class="searchBar">
+
+  <input type="search" class="mat-elevation-z2" placeholder="Choisi ton site"
+    aria-label="Number" matInput
+    [formControl]="myControl" [matAutocomplete]="auto">
+  <!-- <i class="material-icons">search</i> -->
+</div>
+
+<div class="spacer"></div>
+
+<mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"
+  (optionSelected)="details($event.option.id)">
+  <mat-option *ngFor="let option of filteredOptions | async"
+    [value]="option.title" id="{{option._id}}">
+    {{option.title}}
+  </mat-option>
+</mat-autocomplete>

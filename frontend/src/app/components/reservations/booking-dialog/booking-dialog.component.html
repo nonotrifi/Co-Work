@@ -1,0 +1,91 @@
+<!-- <h1 mat-dialog-title>Hi Jean Mich'</h1>
+<div mat-dialog-content>
+  <p>Choose your Work Space</p>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Spaces</mat-label>
+      <input type="search"
+             placeholder="Pick one"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option.title" id="{{option._id}}">
+          {{option.title}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+
+  <div class="searchBar">
+
+    <input type="search" class="mat-elevation-z2" placeholder="Choose one" aria-label="Number" matInput
+      [formControl]="myControl" [matAutocomplete]="auto">
+  </div>
+
+  <div class="spacer"></div>
+
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option.title" id="{{option._id}}">
+      {{option.title}}
+    </mat-option>
+
+  </mat-autocomplete>
+
+
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="" cdkFocusInitial>Ok</button>
+</div> -->
+<h2 mat-dialog-title>Hello</h2>
+<mat-dialog-content class="mat-typography">
+  <p>Choose your Work Space</p>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Espaces</mat-label>
+    <input type="text" placeholder="Pick one" aria-label="Number" matInput
+      [formControl]="myControl"
+      [matAutocomplete]="auto">
+    <mat-autocomplete (optionSelected)='selectSpace($event.option.value)'
+      autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async"
+        [value]="option" id="{{option._id}}">
+        {{option.title}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Select me</mat-label>
+    <mat-select [(ngModel)]="roomType">
+      <mat-option value="meetingRoom">Meeting Room</mat-option>
+      <mat-option value="callRoom">Call Room</mat-option>
+    </mat-select>
+    <mat-hint align="end">Select the type of room</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Entrez un nombre</mat-label>
+    <input [(ngModel)]="roomsNumber" type="number" matInput placeholder="Ex. 1">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Entrez une plage de dates</mat-label>
+    <mat-date-range-input [rangePicker]="picker" [min]="minDate"
+      [max]="maxDate">
+      <input matStartDate placeholder="Start date" [(ngModel)]="startDate">
+      <input matEndDate placeholder="End date" [(ngModel)]="endDate">
+    </mat-date-range-input>
+    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Non Merci</button>
+  <button mat-button (click)="sendReservation()" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>

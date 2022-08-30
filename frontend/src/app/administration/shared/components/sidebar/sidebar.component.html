@@ -1,0 +1,36 @@
+<mat-nav-list>
+
+  <div class="profile-card">
+    <div class="header">
+      <h2>Admin</h2>
+      <h4>admin@admin.com</h4>
+    </div>
+    <div class="change-image">
+      <img [src]="imageUrl">
+      <!-- <input type="file" class="file-upload"
+       (change)="onSelectFile($event)"> -->
+      <label class="custom-file-upload">
+        <input type="file" (change)="onSelectFile($event)" />
+        Upload
+      </label>
+    </div>
+
+  </div>
+
+  <mat-divider></mat-divider>
+  <br>
+  <h3 mat-card-subtitle color="warm">Pages</h3>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/dash">Dashboard</a>
+  <mat-divider></mat-divider>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/dash/posts">Posts</a>
+  <mat-divider></mat-divider>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/dash/users">Users</a>
+  <br>
+  <mat-divider></mat-divider>
+  <br>
+  <h3 mat-card-subtitle color="warm">Réservations</h3>
+  <a mat-list-item routerLinkActive="list-item-active"
+    routerLink="/dash/reservations">Réservations</a>
+</mat-nav-list>

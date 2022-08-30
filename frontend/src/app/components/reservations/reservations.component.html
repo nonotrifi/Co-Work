@@ -1,0 +1,33 @@
+
+
+<!-- <h1>Reservations</h1> -->
+<div class="grid-container">
+
+  <mat-grid-list cols="3" rowHeight="200px">
+    <mat-grid-tile>
+      <button class="button-reservation" mat-raised-button
+        (click)="openSpaceDialog()">Réservez
+        votre espace</button>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <button class="button-reservation-event" mat-raised-button
+        (click)="openEventDialog()" color="accent">Réservez
+        votre event</button>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <button class="button-reservation" mat-raised-button
+        (click)="openMaterialDialog()"
+        color="accent">Réservez
+        votre matériel</button>
+    </mat-grid-tile>
+
+
+
+  </mat-grid-list>
+</div>
+
+
+
+<img src="assets/uploads/reservation.jpg">

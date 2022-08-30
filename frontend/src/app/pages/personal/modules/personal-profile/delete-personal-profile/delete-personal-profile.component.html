@@ -1,0 +1,30 @@
+<mat-card>
+  <!-- <mat-card-content> -->
+  <mat-card-subtitle>Suppression du compte</mat-card-subtitle>
+  <br>
+  <form #changeInfo="ngForm">
+    <p>Etes vous sûre de bien vouloir supprimer votre compte ?</p>
+
+
+    <ul>
+      <button mat-raised-button color="accent"
+        class="button"
+        type="submit" (click)="onDelete($event)">Oui</button>
+    </ul>
+
+    <ul>
+      <button mat-raised-button color="accent"
+        class="button"
+        type="submit" (click)="onNoClick()">Non</button>
+    </ul>
+
+  </form>
+
+
+
+  <!-- </mat-card-content> -->
+
+
+
+
+</mat-card>

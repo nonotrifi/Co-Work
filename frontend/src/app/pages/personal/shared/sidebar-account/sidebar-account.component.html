@@ -1,0 +1,52 @@
+<mat-nav-list>
+
+
+
+  <div class="profile-card">
+    <div class="header">
+      <h2>{{user?.firstName}} {{user?.lastName }}</h2>
+      <h4>{{user?.email}}</h4>
+    </div>
+    <div class="change-image">
+      <img [src]="imageUrl">
+      <!-- <input type="file" class="file-upload"
+      (change)="onSelectFile($event)"> -->
+      <label class="custom-file-upload">
+        <input type="file" (change)="onSelectFile($event)" />
+        Upload
+      </label>
+    </div>
+    <!-- <input type="file"> -->
+    <!-- <button class="btn btn-success">
+        Upload
+      </button> -->
+  </div>
+
+
+
+  <mat-divider></mat-divider>
+  <br>
+  <h3 mat-card-subtitle color="warm">Pages</h3>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/account">Informations
+    personnelles</a>
+  <mat-divider></mat-divider>
+  <a mat-list-item routerLinkActive="list-item-active"
+    routerLink="/account/email-password">Mettre
+    à jour l'adresse mail ou le mot de passe</a>
+  <br>
+  <mat-divider></mat-divider>
+  <br>
+  <h3 mat-card-subtitle color="warm">Réservations</h3>
+  <a mat-list-item routerLinkActive="list-item-active"
+    routerLink="/account/reservations/spaces">Espaces</a>
+  <mat-divider></mat-divider>
+  <a mat-list-item routerLinkActive="list-item-active"
+    routerLink="/account/reservations/events">Events</a>
+  <mat-divider></mat-divider>
+  <a mat-list-item routerLinkActive="list-item-active"
+    routerLink="/account/reservations/materials">Matériels</a>
+
+
+
+</mat-nav-list>

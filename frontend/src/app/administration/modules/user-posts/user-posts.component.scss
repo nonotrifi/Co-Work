@@ -1,0 +1,25 @@
+.space-management-container {
+  width: 90%;
+  margin: auto;
+  flex-direction: column;
+
+  .space-management-item {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+}
+
+img {
+  width: 100px;
+  height: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}

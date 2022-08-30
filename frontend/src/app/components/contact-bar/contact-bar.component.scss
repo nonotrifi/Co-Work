@@ -1,0 +1,42 @@
+img {
+  margin: 1px;
+  height: 80px;
+  width: 80px;
+}
+
+navbarSupportedContent {
+  display: block;
+  position: fixed;
+  top: 0;
+  position: relative;
+}
+
+.spacer{
+  flex: 1 1  auto;
+}
+
+.mat-toolbar.mat-primary {
+  background: white;
+  color: black;
+  position: fixed;
+  top: 0;
+  position: relative;
+}
+
+.contact-bar{
+  position: fixed;
+  top: 0;
+  position: relative;
+}
+
+.mat-raised-button{
+  background-color: #e4b23a;
+  margin-left: 100px;
+  box-shadow: none;
+  width: 150px;
+}
+
+.contact{
+  align-content: center;
+}
+

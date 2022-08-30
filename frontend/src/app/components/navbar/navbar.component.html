@@ -1,0 +1,51 @@
+<!--<nav class="navbar navbar-expand-lg bg-light">-->
+<!--  <div class="container-fluid">-->
+<!--    <img [src]="imageUrl">-->
+<!--    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+<!--    <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--      <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active" aria-current="page" href="#">Home</a>-->
+<!--        </li>-->
+
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="#">Services</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="#">About</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" routerLink="/contact">Contact</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class= "nav-link" routerLink="/login">Login</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+
+<!--    </div>-->
+<!--  </div>-->
+
+
+<!--</nav>-->
+
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <span>
+    <mat-icon>eco</mat-icon>Co'Work
+  </span>
+  <div class="spacer">
+  </div>
+  <a mat-button routerLink="home">Home</a>
+  <a *ngIf="isClient && !isAdmin" mat-button routerLink="account">Compte</a>
+  <a mat-button routerLink="reservations" *ngIf="isClient && !isAdmin">Réservations</a>
+  <a mat-button routerLink="services">Services</a>
+  <a mat-button routerLink="events">Events</a>
+  <a mat-button routerLink="about">About</a>
+  <a mat-button routerLink="contact" *ngIf="!isClient">Contact</a>
+  <a mat-button routerLink="dash" *ngIf="isAdmin">Admin</a>
+
+  <a mat-raised-button color="accent" routerLink="/login" *ngIf="!isAuth" (click)="logout()">Se connecter</a>
+  <a mat-raised-button color="accent" routerLink="/login" *ngIf="isAuth" (click)="logout()">Se déconnecter</a>
+
+</mat-toolbar>

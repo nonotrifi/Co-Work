@@ -1,0 +1,52 @@
+<h2 mat-dialog-title="Hello"> Gestion des services </h2>
+<mat-dialog-content class="mat-typography">
+  <p>Manage your spaces</p>
+  <form #addServicePost="ngForm" [formGroup]="addServiceFormGroup"
+    (ngSubmit)="createService()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Titre</mat-label>
+      <input matInput placeholder="Paris Odéon Space" formControlName="title"
+        required>
+      <mat-error *ngIf="addServiceFormGroup.controls['title'].invalid">{{getErrorMessage('title')}}</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Incredible space"
+        formControlName="description"
+        required></textarea>
+      <mat-error *ngIf="addServiceFormGroup.controls['description'].invalid">{{getErrorMessage('description')}}</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Sous-Titre</mat-label>
+      <input matInput placeholder="Blue wide space"
+        formControlName="subTitle" matInput
+        placeholder="Ex. 1"
+        required>
+      <mat-error *ngIf="addServiceFormGroup.controls['subTitle'].invalid">{{getErrorMessage('subTitle')}}</mat-error>
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Image</mat-label>
+      <ngx-mat-file-input placeholder="Upload your
+        image" [formControl]="fileControl"
+        [multiple]="false"
+        [accept]="accept">
+      </ngx-mat-file-input>
+    </mat-form-field>
+
+  </form>
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Non merci</button>
+  <button mat-button cdkFocusInitial [disabled]="!addServicePost.valid"
+    (click)="createService()">Ok</button>
+</mat-dialog-actions>

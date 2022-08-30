@@ -1,0 +1,47 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 4%;
+}
+
+.child {
+  height: 100px;
+  width: 100%;
+  margin:  20px;
+  padding: 20px;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+input {
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  outline: none;
+  padding: 6px 16px;
+
+  width: 100%;
+
+  font-size: 16px;
+  line-height: 34px;
+}
+
+.spacer {
+  height: 1 0px;
+}
+
+i {
+  font-size: 16px;
+  margin-left: -25px;
+  cursor: pointer;
+}
+
+
+.searchBar{
+  width: 80%;
+}

@@ -1,0 +1,31 @@
+<div class="container my-5 py-5 mx-5 px-5">
+  <div class="row gx-5">
+    <div class="col-12">
+      <mat-card-title>{{paymentType?.title}} | € {{paymentType?.price}}</mat-card-title>
+      <mat-card>
+
+        <mat-card-content>
+          <div class="text">
+            <p><strong>Félicitations vous venez de vous inscrire sur notre
+                plateforme, un mail de confirmation vient d'être envoyé</strong><br>
+              Pour poursuivre continuer sur notre site, nous vous demandons de
+              bien
+              vouloir régler le montant demandé, et vous souhaitons une agréable
+              visite.
+              <strong>Bonne visite</strong>
+            </p>
+          </div>
+
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions>
+          <div class="button">
+            <button mat-raised-button color="primary"
+              (click)="openPaymentDialog()">Continue</button>
+          </div>
+
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

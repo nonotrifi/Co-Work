@@ -1,0 +1,64 @@
+<h2 mat-dialog-title="Hello"> Gestion des events</h2>
+<mat-dialog-content class="mat-typography">
+  <p>Manage your spaces</p>
+  <form #addEventPost="ngForm" [formGroup]="addEventFormGroup"
+    (ngSubmit)="createEvent()">
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" placeholder="Paris Odéon Space"
+        required>
+      <mat-error *ngIf="addEventFormGroup.controls['title'].invalid">{{getErrorMessage('title')}}</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Description</mat-label>
+
+      <textarea matInput formControlName="description" placeholder="Incredible
+        space" required></textarea>
+      <mat-error *ngIf="addEventFormGroup.controls['description'].invalid">{{getErrorMessage('description')}}</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Rooms</mat-label>
+      <input type="text" placeholder="Pick one" aria-label="Number" matInput
+        [formControl]="roomControl"
+        [matAutocomplete]="auto">
+      <mat-autocomplete (optionSelected)='selectedSpace= $event.option.value'
+        autoActiveFirstOption
+        #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async"
+          [value]="option" id="{{option._id}}">
+          {{option.title}}
+        </mat-option>
+
+      </mat-autocomplete>
+      <mat-error *ngIf="addEventFormGroup.controls['room'].invalid">{{getErrorMessage('room')}}</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Image</mat-label>
+      <ngx-mat-file-input placeholder="Upload your
+        image" [multiple]="false" #removableInput [formControl]="fileControl"
+        [accept]="accept" [accept]="accept">
+      </ngx-mat-file-input>
+      <button mat-icon-button matSuffix *ngIf="!removableInput.empty"
+        (click)="removableInput.clear($event)">
+        <mat-icon>clear</mat-icon>
+      </button>
+      <!-- <mat-error *ngIf="addEventFormGroup.controls['image'].invalid">{{getErrorMessage('image')}}</mat-error> -->
+    </mat-form-field>
+
+  </form>
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Non merci</button>
+  <button mat-button [disabled]="!addEventFormGroup.valid"
+    (click)="createEvent()">Ok</button>
+</mat-dialog-actions>

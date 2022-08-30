@@ -1,0 +1,107 @@
+<mat-card>
+  <mat-card-content>
+    <form #loginForm="ngForm" [formGroup]="signUpFormGroup"
+      (ngSubmit)="register()">
+      <mat-error *ngIf="loginError">
+        {{loginError}}
+      </mat-error>
+      <h2>Registration</h2>
+
+      <!-- <mat-form-field appearance="fill">
+      <mat-label>Enter your first name</mat-label>
+      <input matInput placeholder="John" formControlName="text" required> -->
+      <!--<mat-error *ngIf="loginFormGroup.controls.email.invalid">{{getErrorMessage('email')}}</mat-error>-->
+      <!-- </mat-form-field> -->
+      <!-- <mat-form-field appearance="fill">
+      <mat-label>Enter your last name</mat-label>
+      <input matInput placeholder="White" formControlName="text" required> -->
+      <!-- </mat-form-field> -->
+
+
+      <!-- </mat-form-field> -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>Entez votre prénom</mat-label>
+        <input matInput placeholder="Johnny" formControlName="firstName"
+          required>
+        <mat-error *ngIf="signUpFormGroup.controls['firstName'].invalid">{{getErrorMessage('firstName')}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Entez votre nom</mat-label>
+        <input matInput placeholder="Dep" formControlName="lastName" required>
+        <mat-error *ngIf="signUpFormGroup.controls['lastName'].invalid">{{getErrorMessage('lastName')}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Entez votre email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email"
+          required>
+        <mat-error *ngIf="signUpFormGroup.controls['email'].invalid">{{getErrorMessage('email')}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Entez votre mot de passe</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'"
+          formControlName="password">
+        <button type="button" mat-icon-button matSuffix (click)="hide= !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="signUpFormGroup.controls['password'].invalid">{{getErrorMessage('password')}}</mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Rentrez votre mot de passe à nouveau</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'"
+          formControlName="passwordConfirm">
+        <button type="button" mat-icon-button matSuffix (click)="hide= !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="signUpFormGroup.controls['passwordConfirm'].invalid">{{getErrorMessage('passwordConfirm')}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Choisissez votre type d'abonnement</mat-label>
+        <mat-select [(ngModel)]="selectedPlan" [ngModelOptions]="{standalone:
+          true}"
+          (selectionChange)="changeEngagement()">
+          <mat-option [value]="plan" *ngFor="let plan of plans">{{plan}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Choisissez votre engagement</mat-label>
+        <mat-select [disabled]="engagementDisabled"
+          [(ngModel)]="selectedEngagement" [ngModelOptions]="{standalone: true}"
+          (selectionChange)="paymentValid= true;">
+          <mat-option [value]="engage" *ngFor="let engage of engagements">{{engage.viewValue}}
+            | €
+            {{engage.value}} per month
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- <mat-form-field appearance="fill">
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Option 1</mat-radio-button>
+          <mat-radio-button value="2">Option 2</mat-radio-button>
+        </mat-radio-group>
+      </mat-form-field> -->
+      <!-- <button mat-raised-button (click)="openPaymentDialog()" color="primary">Payment</button> -->
+      <button mat-raised-button color="primary"
+        [disabled]="!signUpFormGroup.valid || paymentValid === false">S'enregistrer</button>
+    </form>
+    <br>
+    <span class="center margin-top">Déjà client ? <a class="sign-in-link"
+        routerLink="/login">Log in!</a></span>
+  </mat-card-content>
+
+
+</mat-card>

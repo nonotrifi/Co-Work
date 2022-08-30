@@ -1,0 +1,19 @@
+<mat-card class="card">
+  <mat-card-header>
+    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+    <mat-card-title>{{space.title}}</mat-card-title>
+  </mat-card-header>
+
+  <img mat-card-image src="{{space.image}}" alt="Bastille">
+  <mat-card-content>
+    <p>
+      {{space.description}}
+    </p>
+  </mat-card-content>
+  <div class="spacer"></div>
+  <mat-card-actions>
+
+    <a mat-button *ngIf="!isAuth" (click)="goToLogin()">Réservez votre espace</a>
+    <a mat-button *ngIf="isClient" (click)="goToReservations()">Réservez votre
+      espace</a>
+  </mat-card-actions>
